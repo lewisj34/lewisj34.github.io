@@ -1,3 +1,18 @@
+TO BUILD THE ENTIRE WEBSITE: NOW THAT WERE DEALING
+WITH ACTUALLY UPLOADING THIS STUFF:
+from here: https://talk.jekyllrb.com/t/absolute-url-rendering-links-as-http-localhost/3293
+to build the thing you need to run: 
+
+`JEKYLL_ENV="production" bundle exec jekyll build`
+JEKYLL_ENV="production" bundle exec jekyll build
+
+which i gguess rewrites some of the html files and stuff and then 
+
+`git add . && git commit -m "YOUR_MESSAGE_HERE" && git push origin master --force`
+
+which will then upload your changes to github and your website will update
+
+
 note to run on local: 
 
 bundle exec jekyll serve
@@ -6,15 +21,3 @@ then browse to
 http://localhost:4000 
 
 
-TO BUILD THE ENTIRE WEBSITE: NOW THAT WERE DEALING
-WITH ACTUALLY UPLOADING THIS STUFF:
-from here: https://talk.jekyllrb.com/t/absolute-url-rendering-links-as-http-localhost/3293
-to build the thing you need to run: 
-
-`JEKYLL_ENV="production" bundle exec jekyll build`
-
-which i gguess rewrites some of the html files and stuff and then 
-
-`git add . && git commit -m "YOUR_MESSAGE_HERE" && git push origin master --force`
-
-which will then upload your changes to github and your website will update
