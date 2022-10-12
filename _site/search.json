@@ -1,0 +1,30 @@
+[
+  
+    {
+      "title"    : "Generating Video with Segmentation Masks",
+      "description" : "",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "//2022/10/01/videosegmasks",
+      "date"     : "2022-10-01 21:30:52 +0200"
+    } ,
+  
+    {
+      "title"    : "Convolutions with cuDNN",
+      "description" : "",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "//2021/01/02/convcudnn",
+      "date"     : "2021-01-02 20:29:52 +0100"
+    } ,
+  
+    {
+      "title"    : "Generalized Stiffness Matrix for 2D Frame Structures in C++",
+      "description" : "",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "//2021/01/02/genstiffmatrix2dframe",
+      "date"     : "2021-01-02 19:12:52 +0100"
+    } 
+  
+]
