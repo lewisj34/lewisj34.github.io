@@ -1,0 +1,63 @@
+I"g)<p><em><font size="5"> Basic Introduction</font></em></p>
+
+<p>This is a short and sweet C++ framework to generate a global stiffness matrix for any 2D frame structure. Linear algebra library, <a href="http://arma.sourceforge.net/docs.html#set_size">Armadillo</a>, was used for matrix generation. Basic user input looks like this in <code class="language-plaintext highlighter-rouge">int main()</code></p>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="c1">// instantiate frame object, f </span>
+<span class="n">frame</span> <span class="n">f</span><span class="p">;</span> 
+
+<span class="c1">// element 1 </span>
+<span class="n">f</span><span class="p">.</span><span class="n">add_element</span><span class="p">(</span><span class="k">new</span> <span class="nf">element</span><span class="p">(</span>
+    <span class="mf">2e8</span><span class="p">,</span>        <span class="c1">// E</span>
+    <span class="mf">0.00048</span><span class="p">,</span>    <span class="c1">// I </span>
+    <span class="mf">0.075</span><span class="p">,</span>      <span class="c1">// A</span>
+    <span class="mi">5</span><span class="p">,</span>          <span class="c1">// L</span>
+    <span class="mi">7880</span><span class="p">,</span>       <span class="c1">// rho</span>
+    <span class="mi">0</span><span class="p">,</span>          <span class="c1">// x1</span>
+    <span class="mi">0</span><span class="p">,</span>          <span class="c1">// y1</span>
+    <span class="mi">0</span><span class="p">,</span>          <span class="c1">// x2</span>
+    <span class="mi">5</span><span class="p">,</span>          <span class="c1">// y2</span>
+    <span class="mi">90</span><span class="p">));</span>       <span class="c1">// theta</span>
+
+<span class="c1">// element 2 </span>
+<span class="n">f</span><span class="p">.</span><span class="n">add_element</span><span class="p">(</span><span class="k">new</span> <span class="nf">element</span><span class="p">(</span>
+    <span class="mf">2e8</span><span class="p">,</span>        <span class="c1">// E</span>
+    <span class="mf">0.00048</span><span class="p">,</span>    <span class="c1">// I </span>
+    <span class="mf">0.075</span><span class="p">,</span>      <span class="c1">// A</span>
+    <span class="mi">5</span><span class="p">,</span>          <span class="c1">// L</span>
+    <span class="mi">7880</span><span class="p">,</span>       <span class="c1">// rho</span>
+    <span class="mi">0</span><span class="p">,</span>          <span class="c1">// x1</span>
+    <span class="mi">5</span><span class="p">,</span>          <span class="c1">// y1</span>
+    <span class="mi">0</span><span class="p">,</span>          <span class="c1">// x2</span>
+    <span class="mi">10</span><span class="p">,</span>         <span class="c1">// y2</span>
+    <span class="mi">90</span><span class="p">));</span>       <span class="c1">// theta</span>
+
+<span class="c1">// create global stiffness matrix and print result</span>
+<span class="n">f</span><span class="p">.</span><span class="n">global_k</span><span class="p">();</span></code></pre></figure>
+
+<p>Add elements to your frame structure using the <code class="language-plaintext highlighter-rouge">add_element</code> method of the <code class="language-plaintext highlighter-rouge">frame</code> class. Create the stiffness matrix and print the results using the <code class="language-plaintext highlighter-rouge">global_k</code> method of the <code class="language-plaintext highlighter-rouge">frame</code> class!</p>
+
+<p>Nodes for the stiffness matrix are only representative of each element’s end points, <code class="language-plaintext highlighter-rouge">x1</code>, <code class="language-plaintext highlighter-rouge">y1</code>, <code class="language-plaintext highlighter-rouge">x2</code>, and <code class="language-plaintext highlighter-rouge">x2</code>.</p>
+
+<p><em><font size="5"> Installation Instructions</font></em></p>
+<ol>
+  <li>Install linear algebra library, Armadillo <a href="http://arma.sourceforge.net/download.html">here</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">git clone https://github.com/lewisj34/2DFrameStiffness.git</code> in the directory or location of your choice.</li>
+  <li><code class="language-plaintext highlighter-rouge">cd buld &amp;&amp; make &amp;&amp; ./stiff</code> to run the example loaded. Expected output:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">The</span> <span class="n">global</span> <span class="n">stifness</span> <span class="n">matrix</span> <span class="n">is</span> <span class="n">shown</span> <span class="n">below</span><span class="o">:</span>
+
+   <span class="mf">9.2160e+03</span>            <span class="mi">0</span>  <span class="o">-</span><span class="mf">2.3040e+04</span>  <span class="o">-</span><span class="mf">9.2160e+03</span>            <span class="mi">0</span>  <span class="o">-</span><span class="mf">2.3040e+04</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>
+            <span class="mi">0</span>   <span class="mf">3.0000e+06</span>            <span class="mi">0</span>            <span class="mi">0</span>  <span class="o">-</span><span class="mf">3.0000e+06</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>
+  <span class="o">-</span><span class="mf">2.3040e+04</span>            <span class="mi">0</span>   <span class="mf">7.6800e+04</span>   <span class="mf">2.3040e+04</span>            <span class="mi">0</span>   <span class="mf">3.8400e+04</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>
+  <span class="o">-</span><span class="mf">9.2160e+03</span>            <span class="mi">0</span>   <span class="mf">2.3040e+04</span>   <span class="mf">2.5184e+06</span>            <span class="mi">0</span>            <span class="mi">0</span>  <span class="o">-</span><span class="mf">9.2160e+03</span>            <span class="mi">0</span>  <span class="o">-</span><span class="mf">2.3040e+04</span>  <span class="o">-</span><span class="mf">2.5000e+06</span>            <span class="mi">0</span>            <span class="mi">0</span>
+            <span class="mi">0</span>  <span class="o">-</span><span class="mf">3.0000e+06</span>            <span class="mi">0</span>            <span class="mi">0</span>   <span class="mf">6.0053e+06</span>   <span class="mf">1.6000e+04</span>            <span class="mi">0</span>  <span class="o">-</span><span class="mf">3.0000e+06</span>            <span class="mi">0</span>            <span class="mi">0</span>  <span class="o">-</span><span class="mf">5.3333e+03</span>   <span class="mf">1.6000e+04</span>
+  <span class="o">-</span><span class="mf">2.3040e+04</span>            <span class="mi">0</span>   <span class="mf">3.8400e+04</span>            <span class="mi">0</span>   <span class="mf">1.6000e+04</span>   <span class="mf">2.1760e+05</span>   <span class="mf">2.3040e+04</span>            <span class="mi">0</span>   <span class="mf">3.8400e+04</span>            <span class="mi">0</span>  <span class="o">-</span><span class="mf">1.6000e+04</span>   <span class="mf">3.2000e+04</span>
+            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>  <span class="o">-</span><span class="mf">9.2160e+03</span>            <span class="mi">0</span>   <span class="mf">2.3040e+04</span>   <span class="mf">9.2160e+03</span>            <span class="mi">0</span>   <span class="mf">2.3040e+04</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>
+            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>  <span class="o">-</span><span class="mf">3.0000e+06</span>            <span class="mi">0</span>            <span class="mi">0</span>   <span class="mf">3.0000e+06</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>
+            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>  <span class="o">-</span><span class="mf">2.3040e+04</span>            <span class="mi">0</span>   <span class="mf">3.8400e+04</span>   <span class="mf">2.3040e+04</span>            <span class="mi">0</span>   <span class="mf">7.6800e+04</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>
+            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>  <span class="o">-</span><span class="mf">2.5000e+06</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>   <span class="mf">2.5000e+06</span>            <span class="mi">0</span>            <span class="mi">0</span>
+            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>  <span class="o">-</span><span class="mf">5.3333e+03</span>  <span class="o">-</span><span class="mf">1.6000e+04</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>   <span class="mf">5.3333e+03</span>  <span class="o">-</span><span class="mf">1.6000e+04</span>
+            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>   <span class="mf">1.6000e+04</span>   <span class="mf">3.2000e+04</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>            <span class="mi">0</span>  <span class="o">-</span><span class="mf">1.6000e+04</span>   <span class="mf">6.4000e+04</span></code></pre></figure>
+
+:ET

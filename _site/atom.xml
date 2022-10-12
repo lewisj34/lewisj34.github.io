@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>JCL</title>
- <link href="http://localhost:4000///atom.xml" rel="self"/>
- <link href="http://localhost:4000///"/>
- <updated>2022-10-04T16:39:01+02:00</updated>
- <id>http://localhost:4000/</id>
+ <link href="https://lewisj34.github.io///atom.xml" rel="self"/>
+ <link href="https://lewisj34.github.io///"/>
+ <updated>2022-10-12T21:41:03+02:00</updated>
+ <id>https://lewisj34.github.io/</id>
  <author>
    <name>gesko</name>
    <email>your-email@email.com</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Generating Video with Segmentation Masks</title>
-   <link href="http://localhost:4000///2022/10/01/videosegmasks"/>
+   <link href="https://lewisj34.github.io///2022/10/01/videosegmasks"/>
    <updated>2022-10-01T21:30:52+02:00</updated>
-   <id>http://localhost:4000//2022/10/01/VideoSegMasks</id>
+   <id>https://lewisj34.github.io//2022/10/01/VideoSegMasks</id>
    <content type="html">&lt;p&gt;This will be a bit of a long read. But most likely worth it! This is a tutorial describing how to generate videos with masks overlaid from a trained CNN.&lt;/p&gt;
 
 &lt;p&gt;This tutorial assumes you have a trained model with a .pth file holding the trained weights. I trained my model using multiple GPUs so there is a segment of code 
@@ -343,9 +343,9 @@ with the img_prd and img_ann and plug them into a gif creator.&lt;/p&gt;
  
  <entry>
    <title>Convolutions with cuDNN</title>
-   <link href="http://localhost:4000///2021/01/02/convcudnn"/>
+   <link href="https://lewisj34.github.io///2021/01/02/convcudnn"/>
    <updated>2021-01-02T20:29:52+01:00</updated>
-   <id>http://localhost:4000//2021/01/02/convcuDNN</id>
+   <id>https://lewisj34.github.io//2021/01/02/convcuDNN</id>
    <content type="html">&lt;p&gt;This is just a brief tutorial in generating an edge detector with a conovlution
 operation using cuDNN. For those who aren’t familiar cuDNN is the deep learning 
 primitive framework used as a backend for PyTorch and other higher-level 
@@ -629,9 +629,9 @@ this:
  
  <entry>
    <title>Generalized Stiffness Matrix for 2D Frame Structures in C++</title>
-   <link href="http://localhost:4000///2021/01/02/genstiffmatrix2dframe"/>
+   <link href="https://lewisj34.github.io///2021/01/02/genstiffmatrix2dframe"/>
    <updated>2021-01-02T19:12:52+01:00</updated>
-   <id>http://localhost:4000//2021/01/02/GenStiffMatrix2DFrame</id>
+   <id>https://lewisj34.github.io//2021/01/02/GenStiffMatrix2DFrame</id>
    <content type="html">&lt;p&gt;&lt;em&gt;&lt;font size=&quot;5&quot;&gt; Basic Introduction&lt;/font&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;This is a short and sweet C++ framework to generate a global stiffness matrix for any 2D frame structure. Linear algebra library, &lt;a href=&quot;http://arma.sourceforge.net/docs.html#set_size&quot;&gt;Armadillo&lt;/a&gt;, was used for matrix generation. Basic user input looks like this in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;int main()&lt;/code&gt;&lt;/p&gt;
