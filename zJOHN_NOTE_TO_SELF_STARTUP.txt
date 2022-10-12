@@ -12,7 +12,7 @@ which i gguess rewrites some of the html files and stuff and then
 
 which will then upload your changes to github and your website will update
 
-
+might need to do this twice...
 
 
 
